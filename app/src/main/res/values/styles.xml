@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="b_number">
+        <item name="android:layout_width"> match_parent</item>
+        <item name="android:layout_height">0dp </item>
+        <item name="android:layout_weight">1 </item>
+        <item name="android:textColor"> @color/md_white_1000</item>
+        <item name="android:textSize">@dimen/button_text_size </item>
+        <item name="android:background">@drawable/button_border</item>
+
+    </style>
+
+
+
+    <style name="b_calculation">
+        <item name="android:layout_width"> match_parent</item>
+        <item name="android:layout_height">0dp </item>
+        <item name="android:layout_weight">1 </item>
+        <item name="android:background">@drawable/button_border_cal</item>
+        <item name="android:textColor"> @color/black</item>
+        <item name="android:textSize">@dimen/button_text_size </item>
+        <item name="android:textStyle"> normal</item>
+    </style>
+
+
+    <style name="b_main">
+        <item name="android:layout_width"> match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1 </item>
+        <item name="android:background">@color/purple_700 </item>
+        <item name="android:textColor"> #CDCBCB</item>
+        <item name="android:textSize">@dimen/text2 </item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+
+    <style name="b_calculation2">
+        <item name="android:layout_width"> match_parent</item>
+        <item name="android:layout_height">0dp </item>
+        <item name="android:layout_weight">1 </item>
+        <item name="android:background">@color/purple_700 </item>
+        <item name="android:textColor"> #CDCBCB</item>
+        <item name="android:textSize">@dimen/button_text_size </item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+
+</resources>
