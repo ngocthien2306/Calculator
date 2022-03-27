@@ -37,20 +37,32 @@ Date: 09/03/2022
         android:layout_height="0dp"
         android:gravity="center|end"
         android:id="@+id/txt_result"
-        android:layout_weight="1"
-        android:background="@color/md_grey_700"
+        android:layout_weight="0.6"
+        android:background="@color/md_grey_800"
         android:textColor="@color/white"
+        android:textSize="@dimen/text2"
         />
     <TextView
         android:id="@+id/txt_number"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="1.4"
         android:gravity="center|end"
         android:padding="20dp"
         android:text="@string/_0"
         android:textColor="@color/white"
         android:textSize="@dimen/large"
+        android:background="@color/md_grey_800"
+        android:maxLength="20" />
+    <TextView
+        android:id="@+id/txt_sub_number"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center|end"
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text1"
         android:background="@color/md_grey_800"
         android:maxLength="14" />
         <LinearLayout
@@ -153,16 +165,18 @@ Date: 09/03/2022
                 <androidx.appcompat.widget.AppCompatButton
                     style="@style/b_calculation"
                     android:text="@string/flash"
+                    android:onClick="Division"
 
                     />
                 <androidx.appcompat.widget.AppCompatButton
                     style="@style/b_calculation"
                     android:text="*"
-
+                    android:onClick="Multiplication"
                     />
                 <androidx.appcompat.widget.AppCompatButton
                     style="@style/b_calculation"
                     android:text="-"
+                    android:onClick="Subtract"
                     />
             </LinearLayout>
 
@@ -176,7 +190,7 @@ Date: 09/03/2022
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="0.5"
                 android:orientation="vertical">
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -194,7 +208,21 @@ Date: 09/03/2022
                 <androidx.appcompat.widget.AppCompatButton
                     style="@style/b_number"
                     android:text="."
+                    android:onClick="Click"
                     android:textSize="@dimen/text1"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    style="@style/b_number"
+                    android:text="DEL"
+                    android:textSize="@dimen/text2"
+                    android:onClick="RemoveText"
                     />
             </LinearLayout>
             <LinearLayout
@@ -206,6 +234,7 @@ Date: 09/03/2022
                 <androidx.appcompat.widget.AppCompatButton
                     style="@style/b_calculation"
                     android:text="+"
+                    android:onClick="Addition"
                     />
             </LinearLayout>
         </LinearLayout>
@@ -224,7 +253,7 @@ Date: 09/03/2022
 
                 <androidx.appcompat.widget.AppCompatButton
                     style="@style/b_calculation"
-                    android:text="C"
+                    android:text="AC"
                     android:onClick="ClearClick"
                     />
             </LinearLayout>
@@ -237,6 +266,7 @@ Date: 09/03/2022
                 <androidx.appcompat.widget.AppCompatButton
                     style="@style/b_calculation"
                     android:text="="
+                    android:onClick="Equal"
                     />
             </LinearLayout>
             >
