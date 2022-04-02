@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
     M1: Nguyễn Ngọc Thiện
     M2: Nguyễn Thuận Thiên
 -->
@@ -15,9 +14,9 @@ Date: 09/03/2022
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/md_grey_800"
     android:orientation="vertical"
     android:weightSum="8"
-    android:background="@color/md_grey_800"
     tools:context=".MainActivity">
 
     <!--
@@ -32,245 +31,242 @@ Date: 09/03/2022
     Author: Thiên Nguyễn
     Date: 10/03/2022
     -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:gravity="center|end"
-        android:id="@+id/txt_result"
-        android:layout_weight="0.6"
-        android:background="@color/md_grey_800"
-        android:textColor="@color/white"
-        android:textSize="@dimen/text2"
-        />
+
+
     <TextView
         android:id="@+id/txt_number"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.4"
+        android:background="@color/md_grey_800"
         android:gravity="center|end"
+        android:maxLength="20"
         android:padding="20dp"
         android:text="@string/_0"
         android:textColor="@color/white"
-        android:textSize="@dimen/large"
-        android:background="@color/md_grey_800"
-        android:maxLength="20" />
+        android:textSize="@dimen/large" />
+
     <TextView
         android:id="@+id/txt_sub_number"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:gravity="center|end"
-        android:padding="20dp"
-        android:textColor="@color/white"
-        android:textSize="@dimen/text1"
+        android:layout_marginBottom="16dp"
         android:background="@color/md_grey_800"
-        android:maxLength="14" />
+        android:gravity="end"
+        android:maxLength="14"
+
+        android:textColor="@color/white"
+        android:textSize="@dimen/text1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="3"
-            android:orientation="horizontal"
-            android:weightSum="4">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:weightSum="3">
-                <!--
-                Description: I don't got why Button tag can not change background color, so that
-                I using AppCompatButton to replace. It good.
-                Author: Thiện Nguyễn
-                Date: 09/03/2022
-                -->
-
-
-                <!--
-                Description: Here I using style to define the Tag, purpose to reuse the code such as
-                b_number is UI for number button, b_calculation is UI for letter calculation
-                Author: Thiên Nguyễn
-                Date: 11/03/2022
-                -->
-                <androidx.appcompat.widget.AppCompatButton
-                    style="@style/b_number"
-                    android:text="@string/_7"
-                    android:onClick="Click"
-                    />
-                <androidx.appcompat.widget.AppCompatButton
-                    style="@style/b_number"
-                    android:text="@string/_4"
-                    android:onClick="Click"
-                    />
-                <androidx.appcompat.widget.AppCompatButton
-                    style="@style/b_number"
-                    android:text="@string/_1"
-                    android:onClick="Click"
-                    />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:weightSum="3">
-
-                <androidx.appcompat.widget.AppCompatButton
-                    style="@style/b_number"
-                    android:text="@string/_8"
-                    android:onClick="Click"
-                    />
-                x<androidx.appcompat.widget.AppCompatButton
-                    style="@style/b_number"
-                    android:text="@string/_5"
-                    android:onClick="Click"
-                    />
-                <androidx.appcompat.widget.AppCompatButton
-                    style="@style/b_number"
-                    android:text="@string/_2"
-                    android:onClick="Click"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:weightSum="3">
-
-                <androidx.appcompat.widget.AppCompatButton
-                    style="@style/b_number"
-                    android:text="@string/_9"
-                    android:onClick="Click"
-                    />
-                <androidx.appcompat.widget.AppCompatButton
-                    style="@style/b_number"
-                    android:text="@string/_6"
-                    android:onClick="Click"
-                    />
-                <androidx.appcompat.widget.AppCompatButton
-                    style="@style/b_number"
-                    android:text="@string/_3"
-                    android:onClick="Click"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:weightSum="3">
-
-                <androidx.appcompat.widget.AppCompatButton
-                    style="@style/b_calculation"
-                    android:text="@string/flash"
-                    android:onClick="Division"
-
-                    />
-                <androidx.appcompat.widget.AppCompatButton
-                    style="@style/b_calculation"
-                    android:text="*"
-                    android:onClick="Multiplication"
-                    />
-                <androidx.appcompat.widget.AppCompatButton
-                    style="@style/b_calculation"
-                    android:text="-"
-                    android:onClick="Subtract"
-                    />
-            </LinearLayout>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="2">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:orientation="vertical">
+            android:orientation="vertical"
+            android:weightSum="3">
+            <!--
+            Description: I don't got why Button tag can not change background color, so that
+            I using AppCompatButton to replace. It good.
+            Author: Thiện Nguyễn
+            Date: 09/03/2022
+            -->
 
-                <androidx.appcompat.widget.AppCompatButton
-                    style="@style/b_number"
-                    android:text="0"
-                    android:onClick="Click"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:orientation="vertical">
 
-                <androidx.appcompat.widget.AppCompatButton
-                    style="@style/b_number"
-                    android:text="."
-                    android:onClick="Click"
-                    android:textSize="@dimen/text1"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:orientation="vertical">
+            <!--
+            Description: Here I using style to define the Tag, purpose to reuse the code such as
+            b_number is UI for number button, b_calculation is UI for letter calculation
+            Author: Thiên Nguyễn
+            Date: 11/03/2022
+            -->
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/b_number"
+                android:onClick="Click"
+                android:text="@string/_7" />
 
-                <androidx.appcompat.widget.AppCompatButton
-                    style="@style/b_number"
-                    android:text="DEL"
-                    android:textSize="@dimen/text2"
-                    android:onClick="RemoveText"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:orientation="vertical">
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/b_number"
+                android:onClick="Click"
+                android:text="@string/_4" />
 
-                <androidx.appcompat.widget.AppCompatButton
-                    style="@style/b_calculation"
-                    android:text="+"
-                    android:onClick="Addition"
-                    />
-            </LinearLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/b_number"
+                android:onClick="Click"
+                android:text="@string/_1" />
+
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="4">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:orientation="vertical">
+            android:orientation="vertical"
+            android:weightSum="3">
 
-                <androidx.appcompat.widget.AppCompatButton
-                    style="@style/b_calculation"
-                    android:text="AC"
-                    android:onClick="ClearClick"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:orientation="vertical">
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/b_number"
+                android:onClick="Click"
+                android:text="@string/_8" />
+            x
 
-                <androidx.appcompat.widget.AppCompatButton
-                    style="@style/b_calculation"
-                    android:text="="
-                    android:onClick="Equal"
-                    />
-            </LinearLayout>
-            >
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/b_number"
+                android:onClick="Click"
+                android:text="@string/_5" />
 
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/b_number"
+                android:onClick="Click"
+                android:text="@string/_2" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="3">
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/b_number"
+                android:onClick="Click"
+                android:text="@string/_9" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/b_number"
+                android:onClick="Click"
+                android:text="@string/_6" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/b_number"
+                android:onClick="Click"
+                android:text="@string/_3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="3">
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/b_calculation"
+                android:onClick="Click"
+                android:text="@string/flash"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/b_calculation"
+                android:onClick="Click"
+                android:text="*" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/b_calculation"
+                android:onClick="Click"
+                android:text="-" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/b_number"
+                android:onClick="Click"
+                android:text="0" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/b_number"
+                android:onClick="Click"
+                android:text="."
+                android:textSize="@dimen/text1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/b_number"
+                android:onClick="RemoveText"
+                android:text="DEL"
+                android:textSize="@dimen/text2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/b_calculation"
+                android:onClick="Click"
+                android:text="+" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/b_calculation"
+                android:onClick="ClearClick"
+                android:text="AC" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/b_calculation"
+                android:onClick="Equal"
+                android:text="=" />
+        </LinearLayout>
+        >
+
+    </LinearLayout>
 
 </LinearLayout>

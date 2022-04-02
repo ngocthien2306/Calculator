@@ -4,11 +4,17 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
+
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         last_znak = false;
 
-        if(savedInstanceState!=null){
+        if (savedInstanceState != null) {
             expration_text.setText((savedInstanceState.getString("expration")));
             number_text.setText((savedInstanceState.getString("number")));
             znak = savedInstanceState.getString("znak");
@@ -54,15 +60,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     public void Click(View view) {
         Button button = (Button) view;
         textOnCalculator = number_text.getText().toString();
         if (!textOnCalculator.equals("0")) {
             String textOnButton = textOnCalculator + button.getText().toString();
             number_text.setText(textOnButton);
-        }
-        else {
+        } else {
             String textOnButton = button.getText().toString();
             number_text.setText(textOnButton);
         }
@@ -70,9 +74,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Division(View view) {
-        if(last_znak==true){
+        if (last_znak == true) {
             String e_text = expration_text.getText().toString();
-            String res = e_text.substring(0, e_text.length()-1) + "/";
+            String res = e_text.substring(0, e_text.length() - 1) + "/";
             expration_text.setText(res);
             number_text.setText("0");
             last_znak = true;
@@ -83,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         String e_text = expration_text.getText().toString();
         String n_text = number_text.getText().toString();
         number2 = Double.parseDouble(n_text);
-        if(e_text.equals("") || e_text.contains("=")|| e_text.equals("Error")){
+        if (e_text.equals("") || e_text.contains("=") || e_text.equals("Error")) {
             number1 = Double.parseDouble(n_text);
             znak = "/";
             String res = n_text + "/";
@@ -92,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        if(e_text.endsWith("=")){
+        if (e_text.endsWith("=")) {
             String res = n_text + "/";
             expration_text.setText(res);
             number_text.setText("0");
@@ -114,9 +118,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Multiplication(View view) {
-        if(last_znak==true){
+        if (last_znak == true) {
             String e_text = expration_text.getText().toString();
-            String res = e_text.substring(0, e_text.length()-1) + "*";
+            String res = e_text.substring(0, e_text.length() - 1) + "*";
             expration_text.setText(res);
             number_text.setText("0");
             last_znak = true;
@@ -127,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         String e_text = expration_text.getText().toString();
         String n_text = number_text.getText().toString();
         number2 = Double.parseDouble(n_text);
-        if(e_text.equals("") || e_text.contains("=")|| e_text.equals("Error")){
+        if (e_text.equals("") || e_text.contains("=") || e_text.equals("Error")) {
             number1 = Double.parseDouble(n_text);
             znak = "*";
             String res = n_text + "*";
@@ -136,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        if(e_text.endsWith("=")){
+        if (e_text.endsWith("=")) {
             String res = n_text + "*";
             expration_text.setText(res);
             number_text.setText("0");
@@ -158,9 +162,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Subtract(View view) {
-        if(last_znak==true){
+        if (last_znak == true) {
             String e_text = expration_text.getText().toString();
-            String res = e_text.substring(0, e_text.length()-1) + "-";
+            String res = e_text.substring(0, e_text.length() - 1) + "-";
             expration_text.setText(res);
             number_text.setText("0");
             last_znak = true;
@@ -171,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
         String e_text = expration_text.getText().toString();
         String n_text = number_text.getText().toString();
         number2 = Double.parseDouble(n_text);
-        if(e_text.equals("") || e_text.contains("=")|| e_text.equals("Error")){
+        if (e_text.equals("") || e_text.contains("=") || e_text.equals("Error")) {
             number1 = Double.parseDouble(n_text);
             znak = "-";
             String res = n_text + "-";
@@ -180,7 +184,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        if(e_text.endsWith("=")){
+        if (e_text.endsWith("=")) {
             String res = n_text + "-";
             expration_text.setText(res);
             number_text.setText("0");
@@ -202,9 +206,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Addition(View view) {
-        if(last_znak==true){
+        if (last_znak == true) {
             String e_text = expration_text.getText().toString();
-            String res = e_text.substring(0, e_text.length()-1) + "+";
+            String res = e_text.substring(0, e_text.length() - 1) + "+";
             expration_text.setText(res);
             number_text.setText("0");
             last_znak = true;
@@ -215,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
         String e_text = expration_text.getText().toString();
         String n_text = number_text.getText().toString();
         number2 = Double.parseDouble(n_text);
-        if(e_text.equals("") || e_text.contains("=") || e_text.equals("Error")){
+        if (e_text.equals("") || e_text.contains("=") || e_text.equals("Error")) {
             number1 = Double.parseDouble(n_text);
             znak = "+";
             String res = n_text + "+";
@@ -224,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        if(e_text.endsWith("=")){
+        if (e_text.endsWith("=")) {
             String res = n_text + "+";
             expration_text.setText(res);
             number_text.setText("0");
@@ -246,50 +250,39 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Equal(View view) {
-        String e_text = expration_text.getText().toString();
-        String n_text = number_text.getText().toString();
-        number2 = Double.parseDouble(n_text);
+        String e_text = expration_text.getText().toString(); // sub number
+        String n_text = number_text.getText().toString();   // number
+        Object result;
 
-        System.out.println("exp = " + e_text);
-        System.out.println("num = " + n_text);
 
-        if(e_text.equals("")){
-            String res = n_text + "=" + n_text;
-            expration_text.setText("0");
+        ScriptEngine engine = new ScriptEngineManager().getEngineByName("rhino");
+
+        try {
+            result = engine.eval(n_text);
+        } catch (ScriptException e) {
+            Toast.makeText(this, "Invalid equation", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if(e_text.endsWith("=")){
-            String res = n_text + "=";
-            expration_text.setText(res);
-            number_text.setText(n_text);
-            number1 = number2;
-            return;
-        }
+        number_text.setText(result.toString());
+        expration_text.setText(n_text + "=");
 
-        double r = calculate();
-        if (expration_text.getText().equals("Error"))
-            return;
-
-        String res = String.valueOf(number1) + znak + String.valueOf(number2) + "=";
-        expration_text.setText(res);
-        number_text.setText(String.valueOf(df.format(r)));
     }
 
 
     public void RemoveText(View view) {
-
         textOnCalculator = number_text.getText().toString();
-        StringBuffer sb= new StringBuffer(textOnCalculator);
-        if(sb.length() > 0) {
+        StringBuffer sb = new StringBuffer(textOnCalculator);
+        if (sb.length() > 0) {
             number_text.setText(sb.deleteCharAt(sb.length() - 1));
         }
 
     }
-    public void ClearClick(View view)
-    {
+
+    public void ClearClick(View view) {
         Button button = (Button) view;
         number_text.setText("0");
+        expration_text.setText("");
     }
 
     public double calculate() {
@@ -297,7 +290,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(number1);
         System.out.println(znak);
         System.out.println(number2);
-        switch (znak){
+        switch (znak) {
             case "+":
                 r = number1 + number2;
                 break;
@@ -308,7 +301,7 @@ public class MainActivity extends AppCompatActivity {
                 r = number1 * number2;
                 break;
             case "/":
-                if(number2==0){
+                if (number2 == 0) {
                     expration_text.setText("Error");
                     number_text.setText("0");
                     return 0;
@@ -317,7 +310,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         System.out.println(r);
-        last_znak=false;
+        last_znak = false;
         return r;
     }
 }
