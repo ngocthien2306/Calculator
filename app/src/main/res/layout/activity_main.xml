@@ -55,8 +55,8 @@ Date: 09/03/2022
         android:background="@color/md_grey_800"
         android:gravity="end"
         android:maxLength="14"
-
-        android:textColor="@color/white"
+        tools:text = "Hello"
+        android:textColor="@color/md_grey_500"
         android:textSize="@dimen/text1" />
 
     <LinearLayout
