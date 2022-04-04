@@ -193,6 +193,7 @@ Date: 09/03/2022
             <androidx.appcompat.widget.AppCompatButton
                 style="@style/b_number"
                 android:onClick="Click"
+
                 android:text="0" />
         </LinearLayout>
 

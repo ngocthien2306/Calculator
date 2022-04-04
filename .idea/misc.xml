@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Study/Android/Week05/Calculator/app/src/main/res/drawable/button_border.xml" value="0.2495" />
+        <entry key="..\:/Study/Android/Week05/Calculator/app/src/main/res/drawable/button_border_cal.xml" value="0.2495" />
+        <entry key="..\:/Study/Android/Week05/Calculator/app/src/main/res/drawable/custom_borderless_ripple.xml" value="0.2495" />
         <entry key="..\:/Study/Android/Week05/Calculator/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Calculartor/app/src/main/res/drawable/button_border.xml" value="0.14270833333333333" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Calculartor/app/src/main/res/layout/activity_main.xml" value="0.2" />

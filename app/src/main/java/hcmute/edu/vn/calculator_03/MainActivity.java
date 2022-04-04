@@ -85,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         Double result = calculate(n_text);
+        if(result == null) return;
+
 
         number_text.setText(result.toString());
         expration_text.setText(n_text + "=");
@@ -97,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
         if (sb.length() > 0) {
             number_text.setText(sb.deleteCharAt(sb.length() - 1));
         }
-
     }
 
     public void ClearClick(View view) {
@@ -114,7 +115,6 @@ public class MainActivity extends AppCompatActivity {
         try {
             result = engine.eval(text);
         } catch (ScriptException e) {
-
             return null;
         }
         return Double.parseDouble(result.toString());
